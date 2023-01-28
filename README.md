@@ -10,12 +10,13 @@ This project focused on the application of various neural network algorithms and
   - [Preprocessing *application_df* DataFrame](#preprocessing-application_df-dataframe)
   - [Encoding Categorical Columns](#encoding-categorical-columns)
 - [Compiling, Training, and Evaluating the Model](#compiling-training-and-evaluating-the-model)
-- [Optimize the Model](#optimize-the-model)
+- [Optimization of the Model](#optimization-of-the-model)
   - [Using Deep Neural Networks](#using-deep-neural-networks)
   - [Results](#results)
 - [Summary](#summary)
   - [Data Preprocessing](#data-preprocessing)
-  - [Compiling, Training, and Evaluating the Model](#compiling-training-and-evaluating-the-model)
+  - [Summary on Compiling, Training, and Evaluating the Model](#summary-on-compiling-training-and-evaluating-the-model)
+  - [Conclusion and Recommendation](#conclusion-and-recommendation)
 - [References](#references)
 
 ## Overview of Project
@@ -86,7 +87,7 @@ Fig. 4 highlights the difference between two preliminary NN models that we have 
 - **NN Model 1** used activation functions called 'relu' for both hidden layers and 'sigmoid' for the output layer (*relu8_relu3_sigmoid* in Fig. 4).
 - **NN Model 2** used activation functions called 'tanh' for both hidden layers and 'sigmoid' for the output layer (*tanh8_tanh3_sigmoid* in Fig. 4).
 
-## Optimize the Model
+## Optimization of the Model
 
 Several improvement techniques were introduced and compared against different deep learning NN models, activation functions (e.g. 'LeakyReLU' and 'softmax'), fewer binnings, and less noisy dataset. Using other activation functions or fewer binnings did not show much improvement. The best performing activation function for this dataset was revealed to be the 'tanh' algorithm. In summary, the following optimization techniques and their combinations were implemented to achieve a target predictive accuracy. They are listed from high to low contribution rate.
 
@@ -209,7 +210,7 @@ These results reconfirmed that:
 
 ## Summary
 
-All deliverables have been completed and analyzed according to the assignment requirements, including implementation of reusable functions that enable efficient experimentation on NN/DNN models, code refactoring, properly formatted outputs and graphs, and quality assurance for ensuring accurate results. As for visualizing the dataset and analysis results of multiple NN/DNN models, I employed the popular Matplotlib libraries to perform effective and visually impactful visualizations.
+All deliverables have been completed and analyzed according to the assignment requirements, including implementation of reusable functions that enable efficient experimentation on NN/DNN models, code refactoring, properly formatted outputs and graphs, and quality assurance for ensuring accurate results. As for visualizing the dataset and analysis results of multiple NN/DNN models, I employed the popular Matplotlib libraries to perform effective and visually impactful visualizations. The complete analysis results and visualizations were detailed and discussed in the [Results](#results) section.
 
 ### Data Preprocessing
 
@@ -225,7 +226,7 @@ Here are the preprocessing techniques that I adopted to optimize the predictive 
 - What variable(s) are neither targets nor features, and should be removed from the input data?
   - We dropped the non-beneficial ID columns, *EIN* and *NAME*, from the input data.
 
-### Compiling, Training, and Evaluating the Model
+### Summary on Compiling, Training, and Evaluating the Model
 
 Here are the optimization solutions that I adopted to optimize the predictive accuracy of our NN/DNN models and the answers to the following questions.
 
