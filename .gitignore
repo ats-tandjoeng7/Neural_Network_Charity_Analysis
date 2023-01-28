@@ -7,6 +7,8 @@ __pycache__/
 *.so
 
 # Distribution / packaging
+*.DS_Store
+.DS_Store
 .Python
 build/
 develop-eggs/
@@ -127,3 +129,18 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Adding config.py file
+config.py
+config.js
+API_practice.ipynb
+WeatherPy.ipynb
+VacationPy.ipynb
+Weather_Database.ipynb
+Vacation_Search.ipynb
+Vacation_Itinerary.ipynb
+
+# R
+.RData
+.Rhistory
+.Rproj.user
