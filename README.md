@@ -134,7 +134,7 @@ n_hidden_layer3 = round(0.9 * n_input_features)
 epochn = 500
 periodn = 25
 
-# Reusable func to easily eval nn model (nodes*: number of nodes in each hidden layer, actf*: activation function)
+# Reusable func to easily eval nn model (n*: number of nodes in each hidden layer, actf*: activation function)
 def eval_nn(n1=n_hidden_layer1, n2=n_hidden_layer2, n3=n_hidden_layer3, actf1='tanh', actf2='', actf3='', epochn=epochn):
     # define nn model
     nn = tf.keras.models.Sequential()
