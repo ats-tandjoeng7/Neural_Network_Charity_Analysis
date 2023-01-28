@@ -30,6 +30,20 @@ This project and Module 20 assignment focused on cultivating knowledge and skill
 - Image file: png files.
 - Software: [Pandas User Guide](https://pandas.pydata.org/pandas-docs/stable/user_guide/index.html#user-guide), [TensorFlow Documentation](https://www.tensorflow.org/guide/), [Scikit-learn User Guide - Supervised Learning](https://scikit-learn.org/stable/supervised_learning.html), [Matplotlib - Plot types](https://matplotlib.org/stable/plot_types/index.html).
 
+The csv file contained more than 34000 organizations that have received funding from Alphabet Soup over the years. Within this dataset were a number of columns that capture metadata about each organization, such as the following:
+
+- *EIN* and *NAME* — Identification columns
+- *APPLICATION_TYPE* — Alphabet Soup application type
+- *AFFILIATION* — Affiliated sector of industry
+- *CLASSIFICATION* — Government organization classification
+- *USE_CASE* — Use case for funding
+- *ORGANIZATION* — Organization type
+- *STATUS* — Active status
+- *INCOME_AMT* — Income classification
+- *SPECIAL_CONSIDERATIONS* — Special consideration for application
+- *ASK_AMT* — Funding amount requested
+- *IS_SUCCESSFUL* — Was the money used effectively
+
 ### Challenge Overview
 
 Below is the outline of our deliverables and a written report for presenting our results and analysis summary.
@@ -210,7 +224,7 @@ These results reconfirmed that:
 
 ## Summary
 
-All deliverables have been completed and analyzed according to the assignment requirements, including implementation of reusable functions that enable efficient experimentation on NN/DNN models, code refactoring, properly formatted outputs and graphs, and quality assurance for ensuring accurate results. As for visualizing the dataset and analysis results of multiple NN/DNN models, I employed the popular Matplotlib libraries to perform effective and visually impactful visualizations. The complete analysis results and visualizations were detailed and discussed in the [Results](#results) section.
+All deliverables have been completed and analyzed according to the assignment requirements, including implementation of reusable functions that enable efficient experimentation on NN/DNN models, code refactoring, properly formatted outputs and graphs, and quality assurance for ensuring accurate results. As for visualizing the dataset and analysis results of multiple NN/DNN models, I employed the popular Matplotlib libraries to perform effective and visually impactful visualizations. The complete analysis results and visualizations were detailed and discussed in the [Results](#results) subsection.
 
 ### Data Preprocessing
 
