@@ -274,7 +274,7 @@ During this project, we basically ran massive iterations of experiments for eval
 
 Future studies could explore the dataset and our models further by adding steps that would boost the predictive accuracy significantly as follows. The source code that included some of the additional enhancement techniques is available in [AlphabetSoupCharity_Optimization1.ipynb](./AlphabetSoupCharity_Optimization1.ipynb).
 
-- Excluding the other non-beneficial ID columns called *STATUS*, which actually contained only 5 counts of **0's** data and 34294 counts of **1's** data.
+- Excluding the other non-beneficial ID column called *STATUS*, which actually contained only 5 counts of **0's** data and 34294 counts of **1's** data.
 - Binning based on *NAME* counts instead of removing the *NAME* column completely because *NAME* in this dataset was not a typical ID column.
 - Redesigning our models by employing TensorFlow's `EarlyStopping` that allows us tune several hyper-parameters and study various models more efficiently. Other optimizers and hyper-parameters, such as batch size, learning rate, or epsilon, also helps slightly to optimize the accuracy for training and testing our dataset.
 
