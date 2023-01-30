@@ -276,7 +276,7 @@ Future studies could explore the dataset and our models further by adding steps 
 
 - Excluding the other non-beneficial ID column called *STATUS*, which actually contained only 5 counts of **0's** data and 34294 counts of **1's** data.
 - Binning based on *NAME* counts instead of removing the *NAME* column completely because *NAME* in this dataset was not a typical ID column.
-- Redesigning our models by employing TensorFlow's `EarlyStopping` that allows us tune several hyper-parameters and study various models more efficiently. Other optimizers and hyper-parameters, such as batch size, learning rate, or epsilon, also helps slightly to optimize the accuracy for training and testing our dataset.
+- Redesigning our models by employing TensorFlow's `EarlyStopping` that allows us tune several hyper-parameters and study various models more efficiently. Other optimizers and hyper-parameters, such as batch size, learning rate, or epsilon, also help slightly to optimize the accuracy for training and testing our dataset.
 
 <hr>
 <table><tr><td><img src='Data/AccuracyCurve_DNN_testrun_tanh238_tanh132_LeakyReLU238_sigmoid_Adam_200.png' title='(a) Accuracy curves'></td><td><img src='Data/LossCurve_DNN_testrun_tanh238_tanh132_LeakyReLU238_sigmoid_Adam_200.png' title='(b) Loss curves'></td><td><img src='Data/MSECurve_DNN_testrun_tanh238_tanh132_LeakyReLU238_sigmoid_Adam_200.png' title='(c) MSE curves'></td></tr></table>
