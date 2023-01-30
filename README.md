@@ -17,6 +17,7 @@ This project focused on the application of various neural network algorithms and
   - [Data Preprocessing](#data-preprocessing)
   - [Summary on Compiling, Training, and Evaluating the Model](#summary-on-compiling-training-and-evaluating-the-model)
   - [Conclusion and Recommendation](#conclusion-and-recommendation)
+- [Future Work](#future-work)
 - [References](#references)
 
 ## Overview of Project
@@ -269,9 +270,9 @@ During this project, we basically ran massive iterations of experiments for eval
 - Using a better approach for tuning the hyper-parameters in our NN/DNN models. We could try `GridSearchCV`, `HalvingGridSearchCV`, or `HalvingRandomSearchCV` estimators available in Scikit-learn packages ([Tuning the hyper-parameters of an estimator](https://scikit-learn.org/stable/modules/grid_search.html#grid-search)).
 - Using a more efficient code for sequentially running experiments, saving analyzing results, and creating visualizations at once. The proof of concept was implemented early on and discussed in [Using Deep Neural Networks](#using-deep-neural-networks) subsection. The source code can be reviewed in [AlphabetSoupCharity_Optimization.ipynb](./AlphabetSoupCharity_Optimization.ipynb), which I kicked off to accomplish the "Compiling, Training, and Evaluating the Model" steps and visualizations while at work.
 
-### Future Work
+## Future Work
 
-Future studies could explore the dataset and our models further by adding steps that would boost the predictive accuracy significantly as follows. The source code is available in [AlphabetSoupCharity_Optimization1.ipynb](./AlphabetSoupCharity_Optimization1.ipynb).
+Future studies could explore the dataset and our models further by adding steps that would boost the predictive accuracy significantly as follows. The source code that included some of the additional enhancement techniques is available in [AlphabetSoupCharity_Optimization1.ipynb](./AlphabetSoupCharity_Optimization1.ipynb).
 
 - Excluding the other non-beneficial ID columns called *STATUS*, which actually contained only 5 counts of **0's** data and 34294 counts of **1's** data.
 - Binning based on *NAME* counts instead of removing the *NAME* column completely because *NAME* in this dataset was not a typical ID column.
@@ -283,7 +284,7 @@ Future studies could explore the dataset and our models further by adding steps 
 **Fig. 8 Comparison of (a) Accuracy, (b) Loss, and (c) MSE of four DNN models with 2 different optimizers, 2&ndash;3 hidden layers, and the best performing combination of activation functions (Total neurons in input-layer1-layer2-(layer3): 264-238-132, 264-238-132-(238). Total epochs: 200).**
 <hr>
 
-By implementing some of these improvement techniques and performing a couple test runs afterward, the predictive accuracy of our DNN models could be comfortably boosted beyond 80% level, which is equivalent to a whopping 9% enhancement if compared to our preliminary models. Fig. 8 shows the test run results from four DNN models that I have further studied and also highlights the exceptionally improved outcomes in terms of overall accuracy, loss, and MSE metrics. In conclusion, we could ultimately enhance our models by integrating more systematic preprocessing steps and accumulating all the minor and major optimization techniques.
+By implementing some of these improvement techniques and performing a couple test runs afterward, the predictive accuracy of our DNN models could be comfortably boosted beyond 82% level, which is equivalent to a whopping **9%** enhancement if compared to our preliminary models. Fig. 8 shows the test run results from four DNN models that I have further studied and also highlights the exceptionally improved outcomes in terms of overall accuracy, loss, and MSE metrics. In conclusion, we could ultimately enhance our models by integrating more systematic preprocessing steps and accumulating all the minor and major optimization techniques.
 
 ## References
 
