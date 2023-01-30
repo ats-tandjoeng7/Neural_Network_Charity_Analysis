@@ -25,7 +25,7 @@ This project and Module 20 assignment focused on cultivating knowledge and skill
 
 ### Resources
 
-- Source code: [AlphabetSoupCharity.ipynb](./AlphabetSoupCharity.ipynb), [AlphabetSoupCharity_Optimization.ipynb](./AlphabetSoupCharity_Optimization.ipynb).
+- Source code: [AlphabetSoupCharity.ipynb](./AlphabetSoupCharity.ipynb), [AlphabetSoupCharity_Optimization.ipynb](./AlphabetSoupCharity_Optimization.ipynb), [AlphabetSoupCharity_Optimization1.ipynb](./AlphabetSoupCharity_Optimization1.ipynb).
 - Source data: [charity_data.csv](./Resources/charity_data.csv).
 - Image file: png files.
 - Software: [Pandas User Guide](https://pandas.pydata.org/pandas-docs/stable/user_guide/index.html#user-guide), [TensorFlow Documentation](https://www.tensorflow.org/guide/), [Scikit-learn User Guide - Supervised Learning](https://scikit-learn.org/stable/supervised_learning.html), [Matplotlib - Plot types](https://matplotlib.org/stable/plot_types/index.html).
@@ -84,7 +84,7 @@ After importing the required dependencies, we read the csv data as a DataFrame c
 
 ### Encoding Categorical Columns
 
-We adopted sklearn.preprocessing `OneHotEncoder` method for encoding the categorical columns containing string values into binary features and the StandardScaler method for standardizing and scaling the data as illustrated in the following code snippet. Our feature data were mostly scaled to a mean near zero and unit variance by the StandardScaler method.
+We adopted sklearn.preprocessing `OneHotEncoder` method for encoding the categorical columns containing string values into binary features and the `StandardScaler` method for standardizing and scaling the data as illustrated in the following code snippet. Our feature data were mostly scaled to a mean near zero and unit variance by the `StandardScaler` method.
 
 ## Compiling, Training, and Evaluating the Model
 
@@ -103,7 +103,7 @@ Fig. 4 highlights the difference between two preliminary NN models that we have 
 
 ## Optimization of the Model
 
-Several improvement techniques were introduced and compared against different deep learning NN models, activation functions (e.g. 'LeakyReLU' and 'softmax'), fewer binnings, and less noisy dataset. Using other activation functions or fewer binnings did not show much improvement. The best performing activation function for this dataset was revealed to be the 'tanh' algorithm. In summary, the following optimization techniques and their combinations were implemented to achieve a target predictive accuracy. They are listed from high to low contribution rate.
+Several improvement techniques were introduced and compared against different deep learning NN models, activation functions (e.g. 'LeakyReLU' and 'softmax'), fewer binnings, and less noisy dataset. Using other activation functions or fewer binnings would not show much improvement unless we targeted certain input data. The best performing activation function for this dataset was revealed to be the 'tanh' algorithm. The following optimization techniques and their combinations were implemented to achieve a target predictive accuracy. They are listed from high to low contribution rate.
 
 1. Removed high outliers from *ASK_AMT* data whose values were 1.5 IQR above the third quartile by using the following code snippet. The &pm;3 $\sigma$ approach is another way of filtering possible outliers, though this alternative did not earn any improvement for our dataset.
 2. Increased the number of epochs, for example from 100/200 to 500 or higher, but higher epochs triggered higher cost because the runtime performance would get significantly worse.
@@ -238,7 +238,7 @@ Here are the preprocessing techniques that I adopted to optimize the predictive 
   - For optimizing the predictive accuracy of our NN/DNN models, removal of high outliers from one of the numerical features (*ASK_AMT*) whose values were 1.5 IQR above the third quartile was implemented.
   - Based on the knee point of the *APPLICATION_TYPE* counts as illustrated in Fig. 1, choosing T8 (737) or T7 (725) instead of T10 (528) as the knee point might be an alternative for minimizing the number of bins.
 - What variable(s) are neither targets nor features, and should be removed from the input data?
-  - We dropped the non-beneficial ID columns, *EIN* and *NAME*, from the input data.
+  - We dropped the non-beneficial ID columns, *EIN* and *NAME*, from the input data, though *NAME* in this dataset was not a typical categorical input because it did not consist of unique values.
 
 ### Summary on Compiling, Training, and Evaluating the Model
 
@@ -267,7 +267,23 @@ During this project, we basically ran massive iterations of experiments for eval
 
 - Adding more epochs, hidden layers, and neurons may not necessarily earn us better predictive accuracy and model performance in our dataset as well as some other case studies. It slows down the TensorFlow processing time further and will only result in significantly worse runtime performance (cost-ineffective).
 - Using a better approach for tuning the hyper-parameters in our NN/DNN models. We could try `GridSearchCV`, `HalvingGridSearchCV`, or `HalvingRandomSearchCV` estimators available in Scikit-learn packages ([Tuning the hyper-parameters of an estimator](https://scikit-learn.org/stable/modules/grid_search.html#grid-search)).
-- Using a more efficient code for sequentially running experiments, saving analyzing results, and creating visualizations at once. The proof of concept was implemented early on and discussed in [Using Deep Neural Networks](#using-deep-neural-networks). The source code can be reviewed in [AlphabetSoupCharity_Optimization.ipynb](./AlphabetSoupCharity_Optimization.ipynb), which I kicked off to accomplish the "Compiling, Training, and Evaluating the Model" steps and visualizations while at work.
+- Using a more efficient code for sequentially running experiments, saving analyzing results, and creating visualizations at once. The proof of concept was implemented early on and discussed in [Using Deep Neural Networks](#using-deep-neural-networks) subsection. The source code can be reviewed in [AlphabetSoupCharity_Optimization.ipynb](./AlphabetSoupCharity_Optimization.ipynb), which I kicked off to accomplish the "Compiling, Training, and Evaluating the Model" steps and visualizations while at work.
+
+### Future Work
+
+Future studies could explore the dataset and our models further by adding steps that would boost the predictive accuracy significantly as follows. The source code is available in [AlphabetSoupCharity_Optimization1.ipynb](./AlphabetSoupCharity_Optimization1.ipynb).
+
+- Excluding the other non-beneficial ID columns called *STATUS*, which actually contained only 5 counts of **0's** data and 34294 counts of **1's** data.
+- Binning based on *NAME* counts instead of removing the *NAME* column completely because *NAME* in this dataset was not a typical ID column.
+- Redesigning our models by employing TensorFlow's `EarlyStopping` that allows us tune several hyper-parameters and study various models more efficiently. Other optimizers and hyper-parameters, such as batch size, learning rate, or epsilon, also helps slightly to optimize the accuracy for training and testing our dataset.
+
+<hr>
+<table><tr><td><img src='Data/AccuracyCurve_DNN_testrun_tanh238_tanh132_LeakyReLU238_sigmoid_Adam_200.png' title='(a) Accuracy curves'></td><td><img src='Data/LossCurve_DNN_testrun_tanh238_tanh132_LeakyReLU238_sigmoid_Adam_200.png' title='(b) Loss curves'></td><td><img src='Data/MSECurve_DNN_testrun_tanh238_tanh132_LeakyReLU238_sigmoid_Adam_200.png' title='(c) MSE curves'></td></tr></table>
+
+**Fig. 8 Comparison of (a) Accuracy, (b) Loss, and (c) MSE of four DNN models with 2 different optimizers, 2&ndash;3 hidden layers, and the best performing combination of activation functions (Total neurons in input-layer1-layer2-(layer3): 264-238-132, 264-238-132-(238). Total epochs: 200).**
+<hr>
+
+By implementing some of these improvement techniques and performing a couple test runs afterward, the predictive accuracy of our DNN models could be comfortably boosted beyond 80% level, which is equivalent to a whopping 9% enhancement if compared to our preliminary models. Fig. 8 shows the test run results from four DNN models that I have further studied and also highlights the exceptionally improved outcomes in terms of overall accuracy, loss, and MSE metrics. In conclusion, we could ultimately enhance our models by integrating more systematic preprocessing steps and accumulating all the minor and major optimization techniques.
 
 ## References
 
