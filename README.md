@@ -1,5 +1,5 @@
 # Neural Network Charity Analysis
-This project focused on the application of various neural network algorithms and deep learning neural network models for performing efficient ETL and solving a real-world case study.
+This project focused on the application of various artificial neural network algorithms and deep learning neural network models to solve a real-world case study.
 
 ## Table of Contents
 
@@ -22,7 +22,7 @@ This project focused on the application of various neural network algorithms and
 
 ## Overview of Project
 
-This project and Module 20 assignment focused on cultivating knowledge and skills in data preparation, standardization, binary encoding, machine learning (ML), and neural networks (NN), which were required for solving a real-world challenge: predicting where to make investments and whether applicants would be successful if funded by Alphabet Soup. During the completion of this project we particularly leveraged the powerful features offered by [TensorFlow Documentation](https://www.tensorflow.org/guide/), [Scikit-learn User Guide - Supervised Learning](https://scikit-learn.org/stable/supervised_learning.html), and their supporting packages/libraries/dependencies that let us explore, train, and study various NN models and resources, such as preprocessing/encoding, designing a NN model, optimizing a multi-layered NN model, and saving/sharing a NN model.
+This project focused on cultivating knowledge and skills in data preparation, standardization, binary encoding, machine learning (ML), and neural networks (NN), which were required for solving a real-world challenge: predicting where to make investments and whether applicants would be successful if funded by Alphabet Soup. During the completion of this project we particularly leveraged the powerful features offered by [TensorFlow Documentation](https://www.tensorflow.org/guide/), [Scikit-learn User Guide - Supervised Learning](https://scikit-learn.org/stable/supervised_learning.html), and their supporting packages/libraries/dependencies that let us explore, train, and study various NN models and resources, such as preprocessing/encoding, designing a NN model, optimizing a multi-layered NN model, and saving/sharing a NN model.
 
 ### Resources
 
@@ -210,7 +210,7 @@ Fig. 5 provides the comparison across three different DNN models after implement
 **Fig. 6 Comparison of (a) Accuracy, (b) Loss, and (c) MSE of four DNN models with 1&ndash;3 hidden layers and the best performing 'tanh' activation function (Total neurons in input-layer1-layer2-(layer3): 41-37, 41-37-20, or 41-37-20-(37). Total epochs: 500).**
 <hr>
 
-Fig. 6 illustrates the comparison between models with single hidden layer vs. multiple hidden layers and 'tanh' vs. 'softmax' activation functions when evaluated using identical number of neurons and epochs. The DNN models analyzed in Fig. 6 are as follows.
+Fig. 6 illustrates the comparison between models with single hidden layer vs. multiple hidden layers and 'tanh' vs. 'softmax' activation functions when evaluated using identical numbers of neurons and epochs. The DNN models analyzed in Fig. 6 are as follows.
 
 - **DNN Model 1** used activation functions called 'tanh' for the single hidden layer and 'sigmoid' for the output layer (*tanh37_sigmoid* in Fig. 6).
 - **DNN Model 2** used activation functions called 'tanh' for hidden layers and 'sigmoid' for the output layer (*tanh37_tanh20_tanh37_sigmoid* in Fig. 6).
@@ -225,7 +225,7 @@ These results reconfirmed that:
 
 ## Summary
 
-All deliverables have been completed and analyzed according to the assignment requirements, including implementation of reusable functions that enable efficient experimentation on NN/DNN models, code refactoring, properly formatted outputs and graphs, and quality assurance for ensuring accurate results. As for visualizing the dataset and analysis results of multiple NN/DNN models, I employed the popular Matplotlib libraries to perform effective and visually impactful visualizations. The complete analysis results and visualizations were detailed and discussed in the [Results](#results) subsection.
+All deliverables have been completed and analyzed according to the project requirements, including implementation of reusable functions that enable efficient experimentation on NN/DNN models, code refactoring, properly formatted outputs and graphs, and quality assurance for ensuring accurate results. As for visualizing the dataset and analysis results of multiple NN/DNN models, I employed the popular Matplotlib libraries to perform effective and visually impactful visualizations. The complete analysis results and visualizations were detailed and discussed in the [Results](#results) subsection.
 
 ### Data Preprocessing
 
@@ -276,7 +276,7 @@ Future studies could explore the dataset and our models further by adding steps 
 
 - Excluding the other non-beneficial ID column called *STATUS*, which actually contained only 5 counts of **0's** data and 34294 counts of **1's** data.
 - Binning based on *NAME* counts instead of removing the *NAME* column completely because *NAME* in this dataset was not a typical ID column.
-- Redesigning our models by employing TensorFlow's `EarlyStopping` that allows us tune several hyper-parameters and study various models more efficiently. Other optimizers and hyper-parameters, such as batch size, learning rate, or epsilon, also help slightly to optimize the accuracy for training and testing our dataset.
+- Redesigning our models by employing TensorFlow's `EarlyStopping` that allows us to tune several hyper-parameters and study various models more efficiently. Other optimizers and hyper-parameters, such as batch size, learning rate, or epsilon, also help slightly to optimize the accuracy for training and testing our dataset.
 
 <hr>
 <table><tr><td><img src='Data/AccuracyCurve_DNN_testrun_tanh238_tanh132_LeakyReLU238_sigmoid_Adam_200.png' title='(a) Accuracy curves'></td><td><img src='Data/LossCurve_DNN_testrun_tanh238_tanh132_LeakyReLU238_sigmoid_Adam_200.png' title='(b) Loss curves'></td><td><img src='Data/MSECurve_DNN_testrun_tanh238_tanh132_LeakyReLU238_sigmoid_Adam_200.png' title='(c) MSE curves'></td></tr></table>
